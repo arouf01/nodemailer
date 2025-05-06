@@ -32,7 +32,7 @@ app.post("/send-email", (req, res) => {
         text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
       });
       console.log("Message sent:", info.messageId);
-      res.send("Message sent:", info.messageId);
+      res.json({ messageID: info.messageId });
     } catch (error) {
       console.error("Error while sending mail", error);
     }
