@@ -17,7 +17,9 @@ const transporter = nodemailer.createTransport({
     pass: process.env.PASSWORD,
   },
 });
-
+app.get("/", (req, res) => {
+  res.send("Server is running");
+});
 app.post("/send-email", (req, res) => {
   const { name, email, subject, message } = req.body;
 
